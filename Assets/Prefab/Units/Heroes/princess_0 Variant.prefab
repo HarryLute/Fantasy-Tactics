@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &5234445758343791052
+--- !u!1001 &4222150208265410165
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -56,12 +56,52 @@ PrefabInstance:
       propertyPath: m_Name
       value: princess_0 Variant
       objectReference: {fileID: 0}
-    - target: {fileID: 8213993407155186347, guid: 78ad05e3b6729e14f9e79d5386dc3cf3, type: 3}
-      propertyPath: UnitName
-      value: Frederick
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8213993407155186347, guid: 78ad05e3b6729e14f9e79d5386dc3cf3, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7797947794053953538, guid: 78ad05e3b6729e14f9e79d5386dc3cf3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -2330536701730189178}
   m_SourcePrefab: {fileID: 100100000, guid: 78ad05e3b6729e14f9e79d5386dc3cf3, type: 3}
+--- !u!1 &6246482832816877175 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7797947794053953538, guid: 78ad05e3b6729e14f9e79d5386dc3cf3, type: 3}
+  m_PrefabInstance: {fileID: 4222150208265410165}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-2330536701730189178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6246482832816877175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ce0c88e89d5a5743812a50094fc2f73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UnitName: Frederick
+  OccupiedTile: {fileID: 0}
+  Faction: 0
+  inventory: {fileID: 0}
+  equippedWeapon: {fileID: 0}
+  stats:
+    characterName: 
+    level: 0
+    maxHP: 0
+    currentHP: 0
+    strength: 0
+    magic: 0
+    defense: 0
+    resistance: 0
+    speed: 0
+    luck: 0
+    hpGrowth: 0
+    strengthGrowth: 0
+    magicGrowth: 0
+    defenseGrowth: 0
+    resistanceGrowth: 0
+    speedGrowth: 0
+    luckGrowth: 0
