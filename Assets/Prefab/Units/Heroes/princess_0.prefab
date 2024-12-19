@@ -103,3 +103,23 @@ MonoBehaviour:
   UnitName: Lucina
   OccupiedTile: {fileID: 0}
   Faction: 0
+  inventory: {fileID: 0}
+  equippedWeapon: {fileID: 11400000, guid: 4f99379c78696a64682bf614eeb5de04, type: 2}
+  stats:
+    characterName: 
+    level: 0
+    maxHP: 0
+    currentHP: 0
+    strength: 0
+    magic: 0
+    defense: 0
+    resistance: 0
+    speed: 0
+    luck: 0
+    hpGrowth: 0
+    strengthGrowth: 0
+    magicGrowth: 0
+    defenseGrowth: 0
+    resistanceGrowth: 0
+    speedGrowth: 0
+    luckGrowth: 0
