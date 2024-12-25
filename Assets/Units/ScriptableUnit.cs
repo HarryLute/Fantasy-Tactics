@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Unit", menuName = "Scriptable Unit")]
@@ -5,7 +6,7 @@ using UnityEngine;
 public class ScriptableUnit : ScriptableObject
 {
     public Faction Faction;
-    public BaseUnit UnitPrefab;
+    public List<BaseUnit> UnitPrefabs;
 }
 
 public enum Faction

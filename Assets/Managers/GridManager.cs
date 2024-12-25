@@ -84,7 +84,7 @@ public class GridManager : MonoBehaviour
                     case 3:
                         selectedTile = _waterTile;
                         break;
-                    case 4: 
+                    case 4:
                         selectedTile = _treeTile;
                         break;
                     default:
@@ -117,15 +117,37 @@ public class GridManager : MonoBehaviour
 
 
 
+    
     public Tile GetHeroSpawnTile()
     {
-        return _tiles.Where(t => t.Key.x < _width / 2 && t.Value.Walkable).OrderBy(t => Random.value).First().Value;
+        int minX = 0;
+        int maxX = 9;
+        int minY = 0;
+        int maxY = 7;
+        return _tiles
+            .Where(t => t.Key.x >= minX && t.Key.x <= maxX && t.Key.y >= minY && t.Key.y <= maxY && t.Value.Walkable)
+            .OrderBy(t => Random.value) 
+            .FirstOrDefault()          
+            .Value;                     
     }
 
     public Tile GetEnemySpawnTile()
     {
-        return _tiles.Where(t => t.Key.x > _width / 2 && t.Value.Walkable).OrderBy(t => Random.value).First().Value;
+        int heroMinX = 0;
+        int heroMaxX = 9;
+        int heroMinY = 0;
+        int heroMaxY = 7;
+
+        return _tiles
+            .Where(t =>
+                t.Value.Walkable && 
+                (t.Key.x < heroMinX || t.Key.x > heroMaxX ||
+                 t.Key.y < heroMinY || t.Key.y > heroMaxY)) 
+            .OrderBy(t => Random.value)
+            .FirstOrDefault()
+            .Value;
     }
+
 
     public Tile GetTileAtPosition(Vector2 pos)
     {

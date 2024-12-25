@@ -1,12 +1,9 @@
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Hero1 : BaseHero
+public class Hero2 : BaseHero
 {
     private void Start()
     {
         
     }
 }
-
-

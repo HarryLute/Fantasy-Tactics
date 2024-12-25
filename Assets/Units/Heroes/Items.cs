@@ -10,5 +10,6 @@ public class Item : ScriptableObject
     public int durability;     // Durability of the item
     public bool isConsumable;
     public int healAmount; // For potions, etc.
+    public int WeaponWeight;
 }
 

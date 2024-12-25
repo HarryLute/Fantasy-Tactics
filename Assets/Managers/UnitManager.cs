@@ -21,7 +21,7 @@ public class UnitManager : MonoBehaviour
 
     public void SpawnHeroes()
     {
-        var heroCount = 1;
+        var heroCount = 4;
 
         for (int i = 0; i < heroCount; i++)
         {
@@ -49,14 +49,40 @@ public class UnitManager : MonoBehaviour
         }
         GameManager.Instance.ChangeState(GameState.HeroesTurn);
     }
-    private  T GetRandomUnit<T>(Faction faction) where T : BaseUnit
+
+    private List<BaseUnit> availablePrefabs = new List<BaseUnit>();
+    private T GetRandomUnit<T>(Faction faction) where T : BaseUnit
     {
-        return (T)_units.Where(u => u.Faction == faction).OrderBy(o => Random.value).First().UnitPrefab;
-    }    
+        var matchingUnits = _units.Where(u => u.Faction == faction).ToList();
+
+        if (matchingUnits.Count == 0)
+        {
+            Debug.LogError($"No units found for faction: {faction}");
+            return null;
+        }
+        var randomScriptableUnit = matchingUnits.OrderBy(o => Random.value).First();
+        if (randomScriptableUnit.UnitPrefabs.Count == 0)
+        {
+            Debug.LogError("No prefabs available in the UnitPrefabs list!");
+            return null;
+        }
+        if (availablePrefabs.Count == 0)
+        {
+            availablePrefabs.AddRange(randomScriptableUnit.UnitPrefabs);
+        }
+
+        if (availablePrefabs.Count == 0)
+        {
+            availablePrefabs.AddRange(randomScriptableUnit.UnitPrefabs);
+        }
+        var randomPrefab = availablePrefabs[Random.Range(0, availablePrefabs.Count)];
+        availablePrefabs.Remove(randomPrefab);
+        return randomPrefab as T;
+    }
 
     public void SetSelectedHero(BaseHero hero)
     {
         SelectedHero = hero;
         MenuManager.Instance.ShowSelectedHero(hero);
-    }    
+    }
 }

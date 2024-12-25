@@ -9,20 +9,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2511449114879829526, guid: ac742d5dcb106e3478ed386eae5d88bd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8509550459451208454, guid: 595d88d983682b640a16b81fd71ac396, type: 3}
+    - target: {fileID: 2511449114879829526, guid: ac742d5dcb106e3478ed386eae5d88bd, type: 3}
       propertyPath: m_Color.a
       value: 0.6666667
       objectReference: {fileID: 0}
     - target: {fileID: 2511449114879829526, guid: ac742d5dcb106e3478ed386eae5d88bd, type: 3}
       propertyPath: m_Color.b
-      value: 0.8113208
+      value: 0.9559748
       objectReference: {fileID: 0}
     - target: {fileID: 2511449114879829526, guid: ac742d5dcb106e3478ed386eae5d88bd, type: 3}
       propertyPath: m_Color.g
-      value: 0.19053827
+      value: 0.88853914
       objectReference: {fileID: 0}
     - target: {fileID: 2511449114879829526, guid: ac742d5dcb106e3478ed386eae5d88bd, type: 3}
       propertyPath: m_Color.r
-      value: 0.17604119
+      value: 0.88683194
       objectReference: {fileID: 0}
     - target: {fileID: 7539586382718191671, guid: ac742d5dcb106e3478ed386eae5d88bd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -63,6 +67,14 @@ PrefabInstance:
     - target: {fileID: 7539586382718191671, guid: ac742d5dcb106e3478ed386eae5d88bd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8127107585128960083, guid: ac742d5dcb106e3478ed386eae5d88bd, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 8127107585128960083, guid: ac742d5dcb106e3478ed386eae5d88bd, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.52
       objectReference: {fileID: 0}
     - target: {fileID: 8660628431523556801, guid: ac742d5dcb106e3478ed386eae5d88bd, type: 3}
       propertyPath: m_Name

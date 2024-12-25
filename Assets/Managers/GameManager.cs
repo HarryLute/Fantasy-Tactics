@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     {
         ChangeState(GameState.GenerateGrid);
     }
-     
+
     public void ChangeState(GameState newState)
     {
         GameState = newState;
@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
         }
-    }    
+    }
 }
 public enum GameState
 {
