@@ -110,7 +110,7 @@ MonoBehaviour:
     characterName: Brigand Boss
     level: 4
     maxHP: 20
-    currentHP: 0
+    currentHP: 20
     strength: 8
     magic: 0
     defense: 9

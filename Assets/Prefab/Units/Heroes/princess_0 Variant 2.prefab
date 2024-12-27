@@ -94,7 +94,7 @@ MonoBehaviour:
     characterName: Lute
     level: 1
     maxHP: 17
-    currentHP: 0
+    currentHP: 17
     strength: 0
     magic: 6
     defense: 3

@@ -33,6 +33,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2953659075801573854, guid: 32fd8c5ce591782428c0755b5df9e528, type: 3}
+      propertyPath: stats.currentHP
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 2953659075801573854, guid: 32fd8c5ce591782428c0755b5df9e528, type: 3}
       propertyPath: stats.resistance
       value: 1
       objectReference: {fileID: 0}

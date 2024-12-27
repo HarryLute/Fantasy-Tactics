@@ -94,7 +94,7 @@ MonoBehaviour:
     characterName: Frederick
     level: 1
     maxHP: 20
-    currentHP: 0
+    currentHP: 20
     strength: 7
     magic: 0
     defense: 6

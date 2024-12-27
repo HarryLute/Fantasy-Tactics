@@ -109,8 +109,8 @@ MonoBehaviour:
   stats:
     characterName: Lucina
     level: 1
-    maxHP: 16
-    currentHP: 0
+    maxHP: 20
+    currentHP: 20
     strength: 4
     magic: 0
     defense: 3

@@ -98,7 +98,7 @@ MonoBehaviour:
     characterName: Velmo
     level: 1
     maxHP: 17
-    currentHP: 0
+    currentHP: 17
     strength: 5
     magic: 0
     defense: 3
