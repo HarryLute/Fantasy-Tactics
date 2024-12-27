@@ -25,8 +25,8 @@ public class BaseHero : BaseUnit
         if (Random.Range(0, 100) < stats.speedGrowth)
             stats.speed += 1;
 
-        if (Random.Range(0, 100) < stats.luckGrowth)
-            stats.luck += 1;
+        if (Random.Range(0, 100) < stats.skillGrowth)
+            stats.skill += 1;
 
         Debug.Log($"{stats.characterName} leveled up to {stats.level}!");
     }

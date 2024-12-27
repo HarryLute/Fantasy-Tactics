@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5533162620946893484}
   - component: {fileID: 1256561071901487991}
   - component: {fileID: 2953659075801573854}
+  - component: {fileID: 7557966354886432838}
   m_Layer: 0
   m_Name: Boss_0
   m_TagString: Untagged
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -6248741079362886434, guid: e039b4e1a9e33024c8834b0d3b35c03b, type: 3}
+  m_Sprite: {fileID: 3142978375820203972, guid: 8c5c3cd632f1b7345bd2374bf2f7aa24, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,3 +104,40 @@ MonoBehaviour:
   UnitName: Brigand Boss
   OccupiedTile: {fileID: 0}
   Faction: 1
+  inventory: {fileID: 0}
+  equippedWeapon: {fileID: 0}
+  stats:
+    characterName: Brigand Boss
+    level: 4
+    maxHP: 20
+    currentHP: 0
+    strength: 8
+    magic: 0
+    defense: 9
+    resistance: 0
+    speed: 1
+    skill: 2
+    hpGrowth: 0
+    strengthGrowth: 0
+    magicGrowth: 0
+    defenseGrowth: 0
+    resistanceGrowth: 0
+    speedGrowth: 0
+    skillGrowth: 0
+--- !u!114 &7557966354886432838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7521133563240392565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 094c523e211e55642b0c7315ed5fca11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSlots: 3
+  items:
+  - {fileID: 11400000, guid: 8c25e2131bcc54440b230925fc6b278e, type: 2}
+  - {fileID: 11400000, guid: a53f9bf81bfaa7f4aa1d5139c9f93a84, type: 2}
+  - {fileID: 11400000, guid: 8b6d70b6296e3b54782ccddebe848ca6, type: 2}

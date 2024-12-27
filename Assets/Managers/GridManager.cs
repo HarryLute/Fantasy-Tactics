@@ -13,7 +13,12 @@ public class GridManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
+      
     }
+
+    
+
+
 
     int[,] tileLayout = new int[,]
 {
@@ -104,10 +109,10 @@ public class GridManager : MonoBehaviour
             }
         }
 
-        // Center the camera
-        _cam.transform.position = new Vector3((float)tileLayout.GetLength(0) / 2 - 0.5f,
-                                              (float)tileLayout.GetLength(1) / 2 - 0.5f,
-                                              -10);
+
+        
+
+
 
         // Notify the game manager
         GameManager.Instance.ChangeState(GameState.SpawnHeroes);

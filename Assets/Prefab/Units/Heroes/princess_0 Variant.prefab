@@ -51,7 +51,7 @@ PrefabInstance:
     - target: {fileID: 7616300039610076628, guid: 78ad05e3b6729e14f9e79d5386dc3cf3, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -5711848221618334454, guid: caae68c937a2e044084c02cf3d0c20ff, type: 3}
+      objectReference: {fileID: -1322203209644784773, guid: ac56a05d984c330489b41cb41223f829, type: 3}
     - target: {fileID: 7797947794053953538, guid: 78ad05e3b6729e14f9e79d5386dc3cf3, type: 3}
       propertyPath: m_Name
       value: princess_0 Variant
@@ -64,6 +64,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7797947794053953538, guid: 78ad05e3b6729e14f9e79d5386dc3cf3, type: 3}
       insertIndex: -1
       addedObject: {fileID: -2330536701730189178}
+    - targetCorrespondingSourceObject: {fileID: 7797947794053953538, guid: 78ad05e3b6729e14f9e79d5386dc3cf3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -8357912794191752261}
   m_SourcePrefab: {fileID: 100100000, guid: 78ad05e3b6729e14f9e79d5386dc3cf3, type: 3}
 --- !u!1 &6246482832816877175 stripped
 GameObject:
@@ -88,20 +91,37 @@ MonoBehaviour:
   inventory: {fileID: 0}
   equippedWeapon: {fileID: 0}
   stats:
-    characterName: 
-    level: 0
-    maxHP: 0
+    characterName: Frederick
+    level: 1
+    maxHP: 20
     currentHP: 0
-    strength: 0
+    strength: 7
     magic: 0
-    defense: 0
-    resistance: 0
-    speed: 0
-    luck: 0
-    hpGrowth: 0
-    strengthGrowth: 0
-    magicGrowth: 0
-    defenseGrowth: 0
-    resistanceGrowth: 0
-    speedGrowth: 0
-    luckGrowth: 0
+    defense: 6
+    resistance: 1
+    speed: 7
+    skill: 5
+    hpGrowth: 100
+    strengthGrowth: 100
+    magicGrowth: 100
+    defenseGrowth: 100
+    resistanceGrowth: 100
+    speedGrowth: 100
+    skillGrowth: 100
+--- !u!114 &-8357912794191752261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6246482832816877175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 094c523e211e55642b0c7315ed5fca11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSlots: 3
+  items:
+  - {fileID: 11400000, guid: 8c25e2131bcc54440b230925fc6b278e, type: 2}
+  - {fileID: 11400000, guid: 8b6d70b6296e3b54782ccddebe848ca6, type: 2}
+  - {fileID: 11400000, guid: a53f9bf81bfaa7f4aa1d5139c9f93a84, type: 2}

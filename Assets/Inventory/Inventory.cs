@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public int maxSlots = 5; 
+    public int maxSlots = 3; 
     public List<Item> items = new List<Item>();
 
     public bool AddItem(Item newItem)

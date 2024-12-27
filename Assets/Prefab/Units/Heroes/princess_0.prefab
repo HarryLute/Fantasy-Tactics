@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -3887782371920749848, guid: 1949b21ec739be647af6e7d7123ab04e, type: 3}
+  m_Sprite: {fileID: 2788548627446562132, guid: c818b46a6147ce9408d46b01594bf074, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -109,21 +109,21 @@ MonoBehaviour:
   stats:
     characterName: Lucina
     level: 1
-    maxHP: 0
+    maxHP: 16
     currentHP: 0
-    strength: 0
+    strength: 4
     magic: 0
-    defense: 0
-    resistance: 0
-    speed: 0
-    luck: 0
-    hpGrowth: 0
-    strengthGrowth: 0
-    magicGrowth: 0
-    defenseGrowth: 0
-    resistanceGrowth: 0
-    speedGrowth: 0
-    luckGrowth: 0
+    defense: 3
+    resistance: 1
+    speed: 9
+    skill: 8
+    hpGrowth: 100
+    strengthGrowth: 100
+    magicGrowth: 100
+    defenseGrowth: 100
+    resistanceGrowth: 100
+    speedGrowth: 100
+    skillGrowth: 100
 --- !u!114 &-4720866912197928296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,8 +136,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 094c523e211e55642b0c7315ed5fca11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSlots: 5
+  maxSlots: 3
   items:
   - {fileID: 11400000, guid: 4f99379c78696a64682bf614eeb5de04, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: a53f9bf81bfaa7f4aa1d5139c9f93a84, type: 2}
+  - {fileID: 11400000, guid: cb089e6eea580a74daab6152531eaefe, type: 2}

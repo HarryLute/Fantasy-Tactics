@@ -51,7 +51,7 @@ PrefabInstance:
     - target: {fileID: 7616300039610076628, guid: 78ad05e3b6729e14f9e79d5386dc3cf3, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -3152180383845805149, guid: 8619747717a75d34f94c8f09ba1ab00b, type: 3}
+      objectReference: {fileID: 4112219086072881721, guid: bb92a83adc6a5f041b2531939b2dfa98, type: 3}
     - target: {fileID: 7797947794053953538, guid: 78ad05e3b6729e14f9e79d5386dc3cf3, type: 3}
       propertyPath: m_Name
       value: princess_0 Variant 2
@@ -64,6 +64,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7797947794053953538, guid: 78ad05e3b6729e14f9e79d5386dc3cf3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7773931538718986102}
+    - targetCorrespondingSourceObject: {fileID: 7797947794053953538, guid: 78ad05e3b6729e14f9e79d5386dc3cf3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6848560360964364853}
   m_SourcePrefab: {fileID: 100100000, guid: 78ad05e3b6729e14f9e79d5386dc3cf3, type: 3}
 --- !u!1 &1172472287157774781 stripped
 GameObject:
@@ -82,26 +85,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02d9d93ea7fb7754b8e9b7d4439d0104, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UnitName: Lissa
+  UnitName: Lute
   OccupiedTile: {fileID: 0}
   Faction: 0
   inventory: {fileID: 0}
   equippedWeapon: {fileID: 0}
   stats:
-    characterName: 
-    level: 0
-    maxHP: 0
+    characterName: Lute
+    level: 1
+    maxHP: 17
     currentHP: 0
     strength: 0
-    magic: 0
-    defense: 0
-    resistance: 0
-    speed: 0
-    luck: 0
-    hpGrowth: 0
-    strengthGrowth: 0
-    magicGrowth: 0
-    defenseGrowth: 0
-    resistanceGrowth: 0
-    speedGrowth: 0
-    luckGrowth: 0
+    magic: 6
+    defense: 3
+    resistance: 5
+    speed: 7
+    skill: 6
+    hpGrowth: 100
+    strengthGrowth: 100
+    magicGrowth: 100
+    defenseGrowth: 100
+    resistanceGrowth: 100
+    speedGrowth: 100
+    skillGrowth: 100
+--- !u!114 &6848560360964364853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172472287157774781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 094c523e211e55642b0c7315ed5fca11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSlots: 3
+  items:
+  - {fileID: 11400000, guid: 39eb8c1d97e4568448c8c92962553ae1, type: 2}
+  - {fileID: 11400000, guid: ef9f2780149c09340ae10c1a0c50c5c9, type: 2}
+  - {fileID: 11400000, guid: a53f9bf81bfaa7f4aa1d5139c9f93a84, type: 2}
