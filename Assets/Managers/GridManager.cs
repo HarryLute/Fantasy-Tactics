@@ -13,7 +13,9 @@ public class GridManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
-      
+
+        CenterCameraOnMap();
+
     }
 
     
@@ -74,7 +76,7 @@ public class GridManager : MonoBehaviour
             {
                 Tile selectedTile = null;
 
-                // Select the appropriate tile based on the layout value
+           
                 switch (tileLayout[x, y])
                 {
                     case 0:
@@ -159,4 +161,18 @@ public class GridManager : MonoBehaviour
         if (_tiles.TryGetValue(pos, out var tile)) return tile;
         return null;
     }
+
+    void CenterCameraOnMap()
+    {
+    
+        float centerX = (tileLayout.GetLength(1) - 1) / 2f; 
+        float centerY = (tileLayout.GetLength(0) - 1) / 2f; 
+
+        if (_cam != null)
+        {
+            _cam.position = new Vector3(centerX, centerY, _cam.position.z);
+        }
+    }
+
+
 }
