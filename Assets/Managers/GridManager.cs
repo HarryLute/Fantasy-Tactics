@@ -9,18 +9,24 @@ public class GridManager : MonoBehaviour
     [SerializeField] private Tile _grassTile, _mountainTile, _bridgeTile, _waterTile, _treeTile;
     [SerializeField] private Transform _cam;
     private Dictionary<Vector2, Tile> _tiles;
+    public CameraController cameraController;
 
-    void Awake()
+
+
+    private void Awake()
     {
         Instance = this;
-
         CenterCameraOnMap();
-
+        // Optionally, do some early initialization, but avoid complex setup here
     }
-
-    
-
-
+    void Start()
+    {
+        if (cameraController != null)
+        {
+            cameraController.mapBoundsX = new Vector2(0, tileLayout.GetLength(1) - 1);
+            cameraController.mapBoundsY = new Vector2(0, tileLayout.GetLength(0) - 1);
+        }
+    }
 
     int[,] tileLayout = new int[,]
 {
@@ -109,22 +115,32 @@ public class GridManager : MonoBehaviour
                     _tiles[new Vector2(x, y)] = spawnedTile;
                 }
             }
+
+            if (_tiles == null || _tiles.Count == 0)
+            {
+                Debug.LogError("Grid has not been generated properly!");
+                return;
+            }
         }
-
-
-        
-
-
-
-        // Notify the game manager
         GameManager.Instance.ChangeState(GameState.SpawnHeroes);
     }
 
 
+    void HandleCameraMovement()
+    {
+        float moveSpeed = 5f; // Adjust speed as needed
+        float moveX = Input.GetAxis("Horizontal"); // Arrow keys or A/D
+        float moveY = Input.GetAxis("Vertical");   // Arrow keys or W/S
 
-
+        if (_cam != null)
+        {
+            _cam.position += new Vector3(moveX, moveY, 0) * moveSpeed * Time.deltaTime;
+        }
+    }
 
     
+
+
     public Tile GetHeroSpawnTile()
     {
         int minX = 0;
@@ -135,7 +151,7 @@ public class GridManager : MonoBehaviour
             .Where(t => t.Key.x >= minX && t.Key.x <= maxX && t.Key.y >= minY && t.Key.y <= maxY && t.Value.Walkable)
             .OrderBy(t => Random.value) 
             .FirstOrDefault()          
-            .Value;                     
+            .Value;
     }
 
     public Tile GetEnemySpawnTile()
@@ -164,14 +180,18 @@ public class GridManager : MonoBehaviour
 
     void CenterCameraOnMap()
     {
-    
-        float centerX = (tileLayout.GetLength(1) - 1) / 2f; 
-        float centerY = (tileLayout.GetLength(0) - 1) / 2f; 
+        float centerX = (tileLayout.GetLength(1) - 1) / 2f;
+        float centerY = (tileLayout.GetLength(0) - 1) / 2f;
 
         if (_cam != null)
         {
             _cam.position = new Vector3(centerX, centerY, _cam.position.z);
         }
+    }
+
+    public IEnumerable<Tile> GetAllTiles()
+    {
+        return _tiles.Values;
     }
 
 

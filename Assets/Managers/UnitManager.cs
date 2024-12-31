@@ -12,12 +12,16 @@ public class UnitManager : MonoBehaviour
 
     public BaseHero SelectedHero;
 
-    void Awake()
+    
+
+    
+    private void Awake()
     {
         Instance = this;
-
         _units = Resources.LoadAll<ScriptableUnit>("Units").ToList();
+       
     }
+
 
     public void SpawnHeroes()
     {
@@ -37,7 +41,7 @@ public class UnitManager : MonoBehaviour
 
     public void SpawnEnemies()
     {
-        var enemyCount = 11;
+        var enemyCount = 17;
 
         for (int i = 0; i < enemyCount; i++)
         {
@@ -85,4 +89,45 @@ public class UnitManager : MonoBehaviour
         SelectedHero = hero;
         MenuManager.Instance.ShowSelectedHero(hero);
     }
+
+    public int GetHeroCount()
+    {
+        // Count heroes on the grid
+        return GridManager.Instance.GetAllTiles()
+                                   .Where(tile => tile.OccupiedUnit != null && tile.OccupiedUnit.Faction == Faction.Hero)
+                                   .Count();
+    }
+
+    public int GetEnemyCount()
+    {
+        // Count enemies on the grid
+        return GridManager.Instance.GetAllTiles()
+                                   .Where(tile => tile.OccupiedUnit != null && tile.OccupiedUnit.Faction == Faction.Enemy)
+                                   .Count();
+    }
+
+    public void PerformEnemyTurn()
+    {
+        var enemies = GetAllEnemies();
+
+        foreach (var enemy in enemies)
+        {
+            // Perform enemy AI logic (e.g., move towards a target, attack).
+            enemy.PerformAction();
+        }
+    }
+
+    public List<BaseEnemy> GetAllEnemies()
+    {
+        // Get all tiles from the GridManager
+        var tiles = GridManager.Instance.GetAllTiles();
+
+        // Filter tiles to find enemies and return them as a list
+        return tiles
+            .Where(tile => tile.OccupiedUnit != null && tile.OccupiedUnit.Faction == Faction.Enemy)
+            .Select(tile => tile.OccupiedUnit as BaseEnemy)
+            .ToList();
+    }
+
+
 }

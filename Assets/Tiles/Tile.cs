@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public abstract class Tile : MonoBehaviour
 {
@@ -28,30 +29,53 @@ public abstract class Tile : MonoBehaviour
 
     void OnMouseDown()
     {
-        if(GameManager.Instance.GameState != GameState.HeroesTurn) return;
+        if (GameManager.Instance.GameState != GameState.HeroesTurn) return;
 
         if (OccupiedUnit != null)
         {
-            if (OccupiedUnit.Faction == Faction.Hero) UnitManager.Instance.SetSelectedHero((BaseHero)OccupiedUnit);
+            
+            if (OccupiedUnit.Faction == Faction.Hero)
+            {
+                UnitManager.Instance.SetSelectedHero((BaseHero)OccupiedUnit);
+            }
             else
             {
+                
                 if (UnitManager.Instance.SelectedHero != null)
                 {
-                    var enemy = (BaseEnemy) OccupiedUnit;
-                    Destroy(enemy.gameObject);  //This is attacking function in the future
+                    var enemy = (BaseEnemy)OccupiedUnit;
+
+                    
+                    Destroy(enemy.gameObject);
+
                     UnitManager.Instance.SetSelectedHero(null);
-                }    
-            }    
+
+                    TurnManager.Instance.UnitActionComplete();
+                }
+            }
         }
         else
         {
+            // Handle Hero Movement
             if (UnitManager.Instance.SelectedHero != null)
             {
                 SetUnit(UnitManager.Instance.SelectedHero);
                 UnitManager.Instance.SetSelectedHero(null);
-            }    
-        }    
+
+                TurnManager.Instance.UnitActionComplete();
+            }
+        }
+        Vector2Int tilePosition = new Vector2Int((int)transform.position.x, (int)transform.position.y);
+
+        // Use the new FindFirstObjectByType method
+        CameraController cameraController = Object.FindFirstObjectByType<CameraController>();
+        if (cameraController != null)
+        {
+            cameraController.CenterCameraOnTile(tilePosition);
+        }
     }
+
+
 
     public void SetUnit(BaseUnit unit)
     {
