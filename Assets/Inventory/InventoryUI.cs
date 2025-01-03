@@ -3,13 +3,10 @@ using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
 {
-    public GameObject inventoryPanel; // Reference to the inventory UI panel
+    public GameObject inventoryPanel; // The panel showing the inventory
     public Text[] itemSlots;         // Array of UI Text elements for displaying inventory items
 
-    private Inventory currentInventory; // The currently assigned inventory
-
-  
-    /// <param name="inventory">The inventory to display.</param>
+    // Update the inventory UI based on the given unit's inventory
     public void UpdateInventoryUI(Inventory inventory)
     {
         if (inventory == null)
@@ -18,8 +15,6 @@ public class InventoryUI : MonoBehaviour
             ClearInventoryUI();
             return;
         }
-
-        currentInventory = inventory;
 
         if (itemSlots == null || itemSlots.Length == 0)
         {
@@ -30,28 +25,26 @@ public class InventoryUI : MonoBehaviour
         // Update each item slot with inventory data
         for (int i = 0; i < itemSlots.Length; i++)
         {
-            if (i < currentInventory.items.Count)
+            if (i < inventory.items.Count)
             {
                 if (itemSlots[i] == null)
                 {
                     Debug.LogError($"ItemSlot at index {i} is null. Check your UI setup.");
                     continue;
                 }
-                itemSlots[i].text = currentInventory.items[i].itemName;
+                itemSlots[i].text = inventory.items[i].itemName;  // Update the slot with the item name
             }
             else
             {
                 if (itemSlots[i] != null)
                 {
-                    itemSlots[i].text = "";
+                    itemSlots[i].text = "";  // Clear slot if no item exists
                 }
             }
         }
     }
 
-    /// <summary>
-    /// Clears all inventory slots in the UI.
-    /// </summary>
+    // Clears all inventory slots in the UI
     public void ClearInventoryUI()
     {
         if (itemSlots == null || itemSlots.Length == 0)
@@ -64,11 +57,10 @@ public class InventoryUI : MonoBehaviour
         {
             if (slot != null)
             {
-                slot.text = "";
+                slot.text = "";  // Clear each item slot
             }
         }
-
-        currentInventory = null; // Clear the reference to the inventory
     }
 }
+
 

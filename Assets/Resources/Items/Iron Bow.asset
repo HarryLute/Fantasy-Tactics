@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58dcb0d6becd0c4c897ad99710526ee, type: 3}
   m_Name: Iron Bow
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Iron Bow
   itemIcon: {fileID: 0}
   description: 
-  power: 0
-  durability: 0
+  power: 6
+  durability: 45
   isConsumable: 0
+  range: 2
   healAmount: 0
-  WeaponWeight: 0
+  WeaponWeight: 5

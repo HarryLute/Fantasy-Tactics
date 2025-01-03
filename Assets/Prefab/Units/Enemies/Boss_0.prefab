@@ -104,8 +104,8 @@ MonoBehaviour:
   UnitName: Brigand Boss
   OccupiedTile: {fileID: 0}
   Faction: 1
-  inventory: {fileID: 0}
-  equippedWeapon: {fileID: 0}
+  inventory: {fileID: 7557966354886432838}
+  equippedWeapon: {fileID: 11400000, guid: 8c25e2131bcc54440b230925fc6b278e, type: 2}
   stats:
     characterName: Brigand Boss
     level: 4
@@ -124,6 +124,7 @@ MonoBehaviour:
     resistanceGrowth: 0
     speedGrowth: 0
     skillGrowth: 0
+  hasActed: 0
 --- !u!114 &7557966354886432838
 MonoBehaviour:
   m_ObjectHideFlags: 0

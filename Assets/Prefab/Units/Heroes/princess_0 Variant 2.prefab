@@ -58,6 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8213993407155186347, guid: 78ad05e3b6729e14f9e79d5386dc3cf3, type: 3}
+    - {fileID: -4720866912197928296, guid: 78ad05e3b6729e14f9e79d5386dc3cf3, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -88,8 +89,9 @@ MonoBehaviour:
   UnitName: Lute
   OccupiedTile: {fileID: 0}
   Faction: 0
-  inventory: {fileID: 0}
-  equippedWeapon: {fileID: 0}
+  inventory: {fileID: 6848560360964364853}
+  equippedWeapon: {fileID: 11400000, guid: 39eb8c1d97e4568448c8c92962553ae1, type: 2}
+  hasActed: 0
   stats:
     characterName: Lute
     level: 1

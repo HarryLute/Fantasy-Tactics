@@ -9,6 +9,7 @@ public class Item : ScriptableObject
     public int power;          // Example: Attack power
     public int durability;     // Durability of the item
     public bool isConsumable;
+    public int range;
     public int healAmount; // For potions, etc.
     public int WeaponWeight;
 }

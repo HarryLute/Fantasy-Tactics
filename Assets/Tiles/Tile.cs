@@ -21,6 +21,11 @@ public abstract class Tile : MonoBehaviour
         MenuManager.Instance.ShowTileInfo(this);
     }
 
+    public void ClearUnit()
+    {
+        OccupiedUnit = null;
+    }
+
     void OnMouseExit()
     {
         _highlight.SetActive(false);
@@ -33,47 +38,75 @@ public abstract class Tile : MonoBehaviour
 
         if (OccupiedUnit != null)
         {
-            
-            if (OccupiedUnit.Faction == Faction.Hero)
-            {
-                UnitManager.Instance.SetSelectedHero((BaseHero)OccupiedUnit);
-            }
-            else
-            {
-                
-                if (UnitManager.Instance.SelectedHero != null)
-                {
-                    var enemy = (BaseEnemy)OccupiedUnit;
-
-                    
-                    Destroy(enemy.gameObject);
-
-                    UnitManager.Instance.SetSelectedHero(null);
-
-                    TurnManager.Instance.UnitActionComplete();
-                }
-            }
+            HandleOccupiedUnit();
         }
         else
         {
-            // Handle Hero Movement
+            HandleEmptyTile();
+        }
+
+        CenterCameraOnThisTile();
+    }
+
+    private void HandleOccupiedUnit()
+    {
+        if (OccupiedUnit.Faction == Faction.Hero)
+        {
+            UnitManager.Instance.SetSelectedHero((BaseHero)OccupiedUnit);
+        }
+        else
+        {
+            // Attack the enemy if a hero is selected
             if (UnitManager.Instance.SelectedHero != null)
             {
-                SetUnit(UnitManager.Instance.SelectedHero);
-                UnitManager.Instance.SetSelectedHero(null);
+                var hero = UnitManager.Instance.SelectedHero;
+                var enemy = (BaseEnemy)OccupiedUnit;
 
-                TurnManager.Instance.UnitActionComplete();
+                if (hero.CanAttack(enemy))
+                {
+                    hero.Attack(enemy);
+
+                    // Deselect the hero after the attack
+                    UnitManager.Instance.SetSelectedHero(null);
+                }
+                else
+                {
+                    Debug.Log($"{enemy.UnitName} is out of range!");
+                }
             }
         }
+    }
+
+    private void HandleEmptyTile()
+    {
+        // Move the selected hero to this tile
+        if (UnitManager.Instance.SelectedHero != null)
+        {
+            var hero = UnitManager.Instance.SelectedHero;
+
+            // Update hero's position
+            hero.OccupiedTile.ClearUnit();
+            SetUnit(hero);
+
+            // Complete the hero's action
+            hero.PerformAction();
+
+            // Deselect the hero
+            UnitManager.Instance.SetSelectedHero(null);
+        }
+    }
+
+    private void CenterCameraOnThisTile()
+    {
         Vector2Int tilePosition = new Vector2Int((int)transform.position.x, (int)transform.position.y);
 
-        // Use the new FindFirstObjectByType method
         CameraController cameraController = Object.FindFirstObjectByType<CameraController>();
         if (cameraController != null)
         {
             cameraController.CenterCameraOnTile(tilePosition);
         }
     }
+
 
 
 

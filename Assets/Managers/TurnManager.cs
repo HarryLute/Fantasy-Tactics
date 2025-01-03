@@ -6,8 +6,6 @@ public class TurnManager : MonoBehaviour
 
     private int unitsRemaining;
 
-
-
     private void Awake()
     {
         if (Instance == null)
@@ -40,10 +38,14 @@ public class TurnManager : MonoBehaviour
     {
         if (gameState == GameState.HeroesTurn)
         {
+            // Reset "hasActed" for all heroes
+            UnitManager.Instance.ResetUnitsActed(Faction.Hero);
             unitsRemaining = UnitManager.Instance.GetHeroCount();
         }
         else if (gameState == GameState.EnemiesTurn)
         {
+            // Reset "hasActed" for all enemies
+            UnitManager.Instance.ResetUnitsActed(Faction.Enemy);
             unitsRemaining = UnitManager.Instance.GetEnemyCount();
         }
 
@@ -72,4 +74,3 @@ public class TurnManager : MonoBehaviour
         }
     }
 }
-

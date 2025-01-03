@@ -3,9 +3,10 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public int maxSlots = 3; 
-    public List<Item> items = new List<Item>();
+    public int maxSlots = 3; // Max slots for the unit's inventory
+    public List<Item> items = new List<Item>(); // List to hold items
 
+    // Add an item to the inventory
     public bool AddItem(Item newItem)
     {
         if (items.Count < maxSlots)
@@ -21,6 +22,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    // Remove an item from the inventory
     public void RemoveItem(Item item)
     {
         if (items.Contains(item))
@@ -33,14 +35,6 @@ public class Inventory : MonoBehaviour
             Debug.Log($"{item.itemName} not found in inventory.");
         }
     }
-
-    public void DisplayInventory()
-    {
-        Debug.Log("Inventory:");
-        foreach (var item in items)
-        {
-            Debug.Log($"- {item.itemName}");
-        }
-    }
 }
+
 

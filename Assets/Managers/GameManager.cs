@@ -14,17 +14,17 @@ public class GameManager : MonoBehaviour
 
         if (GridManager.Instance == null)
         {
-            GridManager.Instance = new GridManager(); 
+            GridManager.Instance = new GridManager();
             Debug.LogWarning("GridManager was not initialized. Initializing now.");
         }
 
         if (UnitManager.Instance == null)
         {
-            UnitManager.Instance = new UnitManager(); 
+            UnitManager.Instance = new UnitManager();
             Debug.LogWarning("UnitManager was not initialized. Initializing now.");
         }
 
-        
+
     }
     void Start()
     {

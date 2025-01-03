@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58dcb0d6becd0c4c897ad99710526ee, type: 3}
   m_Name: Rapier
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Rapier
   itemIcon: {fileID: 0}
   description: 
   power: 9
   durability: 20
   isConsumable: 0
+  range: 1
   healAmount: 0
-  WeaponWeight: 2
+  WeaponWeight: 1

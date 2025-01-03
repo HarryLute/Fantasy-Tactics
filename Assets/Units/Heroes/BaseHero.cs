@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class BaseHero : BaseUnit
 {
-    public CharacterStats stats;
+   
+    private Inventory currentInventory;
     public void LevelUp()
     {
         stats.level++;
@@ -31,17 +32,12 @@ public class BaseHero : BaseUnit
         Debug.Log($"{stats.characterName} leveled up to {stats.level}!");
     }
 
-    public void TakeDamage(int damage)
-    {
-        stats.currentHP -= damage;
-        if (stats.currentHP <= 0)
-        {
-            stats.currentHP = 0;
-            Debug.Log($"{stats.characterName} has fallen!");
-        }
-    }
+    
 
-   
+
+
+
+
 
 
     public void Equip(Item weapon)

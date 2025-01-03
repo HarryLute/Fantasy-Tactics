@@ -15,7 +15,9 @@ MonoBehaviour:
   itemName: Iron Sword
   itemIcon: {fileID: -3455089740371052150, guid: d80450bd4749db046bc5ff47b1d12efe, type: 3}
   description: 
-  power: 4
+  power: 5
   durability: 50
   isConsumable: 0
+  range: 1
   healAmount: 0
+  WeaponWeight: 2

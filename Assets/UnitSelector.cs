@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class UnitSelector : MonoBehaviour
 {
-    public InventoryUI inventoryUI; 
+    public InventoryUI inventoryUI; // Reference to InventoryUI
 
     public void OnUnitSelected(BaseUnit unit)
     {
@@ -12,12 +12,12 @@ public class UnitSelector : MonoBehaviour
             return;
         }
 
-       
+        
         Inventory unitInventory = unit.GetComponent<Inventory>();
 
         if (unitInventory != null)
         {
-            inventoryUI.UpdateInventoryUI(unitInventory); 
+            inventoryUI.UpdateInventoryUI(unitInventory); // Update UI with the selected unit's inventory
         }
         else
         {
@@ -28,7 +28,7 @@ public class UnitSelector : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)) 
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hit))
@@ -38,5 +38,7 @@ public class UnitSelector : MonoBehaviour
             }
         }
     }
-
 }
+
+
+

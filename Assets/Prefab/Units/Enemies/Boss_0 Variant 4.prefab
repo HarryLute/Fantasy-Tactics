@@ -33,6 +33,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2953659075801573854, guid: 32fd8c5ce591782428c0755b5df9e528, type: 3}
+      propertyPath: equippedWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 39eb8c1d97e4568448c8c92962553ae1, type: 2}
+    - target: {fileID: 2953659075801573854, guid: 32fd8c5ce591782428c0755b5df9e528, type: 3}
       propertyPath: stats.strength
       value: 0
       objectReference: {fileID: 0}
