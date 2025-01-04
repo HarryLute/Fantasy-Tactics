@@ -83,5 +83,6 @@ public class MenuManager : MonoBehaviour
             Debug.LogWarning("SelectedHeroObject or its Text component is not assigned.");
         }
     }
+
 }
 

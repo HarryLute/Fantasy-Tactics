@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c818b46a6147ce9408d46b01594bf074
+guid: 3d5787629814cd14884e5da8945d6e7a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2788548627446562132
-    second: Lucina_0
+      213: 8989798869969104524
+    second: Redbar_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Lucina_0
+      name: Redbar_0
       rect:
         serializedVersion: 2
-        x: 18
-        y: 6
-        width: 112
-        height: 114
+        x: 0
+        y: 0
+        width: 300
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 45dfad9c33ae2b620800000000000000
-      internalID: 2788548627446562132
+      spriteID: c8e67b6317e22cc70800000000000000
+      internalID: 8989798869969104524
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Lucina_0: 2788548627446562132
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
